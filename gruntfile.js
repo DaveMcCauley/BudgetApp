@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 
       libraries: { // libraries
         files: [{
-          expand  : true;                // allow dynamic build
+          expand  : true,                // allow dynamic build
           cwd     : 'src/assets/lib',    // curernt working dir
           source  : '**/*.js',           // source files (if tis failes, it's src)
           dest    : 'public/assets/lib', // destination
@@ -124,7 +124,7 @@ module.exports = function(grunt) {
         cwd    : 'src/assets/',
         src    : ['css/**/*.css'],
         dest   : 'src/assets/'
-      }
+      },
 
       prod: {
         expand : true,
@@ -151,14 +151,14 @@ module.exports = function(grunt) {
           csslintrc: '.csslintrc'
         },
         src: ['src/assets/css/*.css']
-      }
+      },
 
       prod_strict: {
         options : {
           import : false
         },
         src : ['public/assets/css/*.css']
-      }
+      },
 
       prod_lax: {
         options: {
@@ -290,7 +290,7 @@ module.exports = function(grunt) {
           // add as necessary...
         }
       }
-    }
+    },
 
 
 
@@ -304,7 +304,7 @@ module.exports = function(grunt) {
           success: true, // whether successful grunt executions should be notified automatically
           duration: 3 // the duration of notification in seconds, for `notify-send only
         }
-      }
+      },
 
       fini: {
         options: {

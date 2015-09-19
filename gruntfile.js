@@ -3,7 +3,7 @@
 // our wrapper function
 module.exports = function(grunt) {
 
-  require('time-grunt')(grunt);
+  //require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
   // configure grunt
@@ -14,96 +14,7 @@ module.exports = function(grunt) {
     // all configuration goes here
 
 
-
-
-    // configure jshint
-    jshint: {
-      options: {
-        reporter: require('jshint-stylish')
-      },
-      // lint everything in src except external libraries
-      prod: ['Gruntfile.js','src/**/*.js','!src/assets/lib/**/*.js']
-    },
-
-
-
-
-    // configure uglify
-    uglify: {
-
-      options: {
-        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
-        mangle: true
-      },
-
-      prod: { // in-house files
-        files: {
-          //TODO: assign wildcards?
-          //'dist/js/magic.min.js':'src/js/magic.js',
-          //'dist/js/test.js':'src/js/test.js'
-          //'dist/js/budgetapp.min.js': ['src/js/magic.js','src/js/test.js']
-          'public/app/core.js' : ['src/**/*.js','!src/assets/lib/**/*.js']
-        }
-      },
-
-      libraries: { // libraries
-        files: [{
-          expand  : true,                // allow dynamic build
-          cwd     : 'src/assets/lib',    // curernt working dir
-          source  : '**/*.js',           // source files (if tis failes, it's src)
-          dest    : 'public/assets/lib', // destination
-          flatten : true,                // remove all uncessary nexting
-          ext     : '.min.js'            // replace .js to .min.js
-        }]
-      }
-    },
-
-
-
-
-    less: {
-
-      dev: {
-        files: [{  // for development, keep individual css files
-          //'dist/css/Budgetapp.css' : 'src/less/test.less'
-          //'dist/css/Budgetapp.css' : ['src/less/test.less','src/less/test2.less']
-          // 'dist/**/*.css' : 'src/**/*.less' << DOES NOT wORK
-          // for 1:1 Wildcards only work on RIGHT SIDE
-          expand : true,              // allow dynamic build
-          cwd    : 'src/assets/css',
-          src    : '**/*.less',
-          dest   : 'src/assets/css',
-          ext    : '.css'
-        }],
-      },
-
-      prod: {   // for production, compile to singel otput file.
-        files: {
-          'public/assets/css/budgetapp.css' : 'src/assets/css/**/*.less'
-          }
-      }
-    },
-
-
-
-
-    cssmin: {
-
-      options: {
-        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
-      },
-
-      prod: { //minimze the conatenated file.
-        files: {
-          'public/assets/css/budgetapp.css' : 'public/assets/css/budgetapp.css' //< works!
-        }
-      }
-    },
-
-
-
-
-    // configure autoprefixing for compiled output css
+// AUTOPREFIXER =====================================================
     autoprefixer: {
 
       options: {
@@ -128,15 +39,49 @@ module.exports = function(grunt) {
 
       prod: {
         expand : true,
-        cwd    : 'src/assets/',
+        cwd    : 'public/assets/',
         src    : ['css/**/*.css'],
         dest   : 'public/assets/'
       }
     },
 
 
+// CLEAN ============================================================
+    clean: {
+      src: 'public/**/*.*'
+    },
 
 
+// CONCAT ===========================================================
+    concat: {
+      dist: {
+        // if some scripts depend upon eachother,
+        // make sure to list them here in order
+        // rather than just using the '*' wildcard.
+        // src: [BUILD_DIR_JS + '*.js'],
+        // dest: BUILD_FILE_JS
+
+        //for multiples...
+        //files: {
+        //  'dist/basic.js': ['src/main.js'],
+        //  'dist/with_extras.js': ['src/main.js', 'src/extras.js'],
+        //},
+      }
+    },
+
+
+// COPY =============================================================
+    copy: {
+      build: {
+        // For usage :: https://www.npmjs.com/package/grunt-contrib-copy
+        files: {
+          // 'desitination': 'source'
+        }
+      }
+    },
+
+
+// CSSLINT ==========================================================
     csslint: {
 
       dev_strict: {
@@ -166,57 +111,53 @@ module.exports = function(grunt) {
         },
         src: ['public/assets/css/*.css']
       }
-    },
+    },    
+    
 
+// CSSMIN ===========================================================
+    cssmin: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+      },
 
-
-    open: {
-      server: {
-        path: 'http://localhost/budgetapp/',
-        //app: 'Google Chrome'
-      }
-    },
-
-
-
-    // clean out a path
-    clean: {
-      src: 'public/**/*.*'
-    },
-
-
-
-    // copy files into dist directory
-    copy: {
-      build: {
-        // For usage :: https://www.npmjs.com/package/grunt-contrib-copy
+      prod: { //minimze the conatenated file.
         files: {
-          // 'desitination': 'source'
+          'public/assets/css/budgetapp.css' : 'public/assets/css/budgetapp.css' //< works!
         }
       }
     },
 
 
+// HTMLLINT =========================================================
+      // TODO: https://github.com/htmllint/grunt-htmllint //////////////
 
-    // conc files together
-    concat: {
-      dist: {
-        // if some scripts depend upon eachother,
-        // make sure to list them here in order
-        // rather than just using the '*' wildcard.
-        // src: [BUILD_DIR_JS + '*.js'],
-        // dest: BUILD_FILE_JS
 
-        //for multiples...
-        //files: {
-        //  'dist/basic.js': ['src/main.js'],
-        //  'dist/with_extras.js': ['src/main.js', 'src/extras.js'],
-        //},
+
+//HTMLMIN ===========================================================
+    htmlmin: {
+
+      prod: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: [{
+            expand: true,
+            cwd: 'src/',
+            src: ['**/*.html'],
+            dest: 'public/'
+        }]
+      },
+
+      dev: {
+        files: {
+          // 'destination': 'source'
+        }
       }
     },
 
 
-
+// IMAGEMIN =========================================================
     imagemin: {
       dynamic: {
         options:  {
@@ -230,70 +171,53 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'src/assets/img/',
             src: ['**/*.{png,jpg,gif}'],
-            dest: 'publc/assets/img/'
+            dest: 'public/assets/img/'
         }]
       }
     },
+    
 
-
-
-
-    htmlmin: {
-
-      prod: {
-
-        options: {
-          removeComments: true,
-          collapseWhitespace: true
-        },
-
-        files: [{
-            expand: true,
-            cwd: 'src/',
-            src: ['**/*.html'],
-            dest: 'public/'
-        }]
-
-
+// JSHINT ===========================================================
+    jshint: {
+      options: {
+        reporter: require('jshint-stylish')
       },
+      // lint everything in src except external libraries
+      prod: ['Gruntfile.js','src/**/*.js','!src/assets/lib/**/*.js'],
+      dev: ['Gruntfile.js','src/**/*.js','!src/assets/lib/**/*.js']
+    },
+
+
+// LESS =============================================================
+    less: {
 
       dev: {
-        files: {
-          // 'destination': 'source'
-
-        }
-      }
-
-    },
-
-
-
-
-    watch: {
-      stylesheets: {
-        files: ['src/**/*.css','src/**/*.less'],
-        tasks: ['less:dev','csslint:dev_lax','autoprefixer:dev']
+        files: [{  // for development, keep individual css files
+          //'dist/css/Budgetapp.css' : 'src/less/test.less'
+          //'dist/css/Budgetapp.css' : ['src/less/test.less','src/less/test2.less']
+          // 'dist/**/*.css' : 'src/**/*.less' << DOES NOT wORK
+          // for 1:1 Wildcards only work on RIGHT SIDE
+          expand : true,              // allow dynamic build
+          cwd    : 'src/assets/css',
+          src    : '**/*.less',
+          dest   : 'src/assets/css',
+          ext    : '.css'
+        }],
       },
-      scripts: {
-        files: 'src/**/*.js',
-        tasks: ['jshint']
-      }
-    },
 
-
-
-    targethtml : {
-      prod: {
+      prod: {   // for production, compile to singel otput file.
         files: {
-          // desitination : source
-          'public/index.html' : 'src/index.html'
-          // add as necessary...
-        }
+          'public/assets/css/budgetapp.css' : 'src/assets/css/**/*.less'
+          }
       }
     },
 
 
+// NEWER ============================================================
+  // TODO: https://www.npmjs.com/package/grunt-newer ////////////////
 
+
+// NOTIFY ===========================================================
     notify : {
 
       notify_hooks: {
@@ -312,13 +236,76 @@ module.exports = function(grunt) {
           message: 'Grunt has finished.', //required
         }
       },
+    },  
 
-    }
+
+// OPEN =============================================================
+    open: {
+      server: {
+        path: 'http://localhost/budgetapp/',
+        //app: 'Google Chrome'
+      }
+    },
+
+
+// TARGETHTML =======================================================
+    targethtml : {
+      prod: {
+        files: {
+          // desitination : source
+          'public/index.html' : 'src/index.html'
+          // add as necessary...
+        }
+      }
+    },
+
+
+// UGLIFY ===========================================================
+    uglify: {
+      options: {
+        banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+        mangle: true
+      },
+
+      prod: { // in-house files
+        files: {
+          //TODO: assign wildcards?
+          //'dist/js/magic.min.js':'src/js/magic.js',
+          //'dist/js/test.js':'src/js/test.js'
+          //'dist/js/budgetapp.min.js': ['src/js/magic.js','src/js/test.js']
+          'public/app/core.js' : ['src/**/*.js','!src/assets/lib/**/*.js']
+        }
+      },
+
+      libraries: { // libraries
+        files: [{
+          expand  : true,                // allow dynamic build
+          cwd     : 'src/assets/lib',    // curernt working dir
+          src  : '**/*.js',              // source files 
+          dest    : 'public/assets/lib',  // destination
+          flatten : true,                // remove all uncessary nexting
+          ext     : '.min.js'            // replace .js to .min.js
+        }],
+      }
+    },
+    
+
+// WATCH ============================================================
+    watch: {
+      stylesheets: {
+        files: ['src/**/*.css','src/**/*.less'],
+        tasks: ['less:dev','csslint:dev_lax','autoprefixer:dev']
+      },
+      scripts: {
+        files: 'src/**/*.js',
+        tasks: ['jshint']
+      }
+    } //<---<
 
   });
 
-  // https://www.npmjs.com/package/grunt-newer
-  // https://github.com/htmllint/grunt-htmllint
+
+
   // https://24ways.org/2013/grunt-is-not-weird-and-hard/
 
   // create the tasks

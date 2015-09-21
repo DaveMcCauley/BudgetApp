@@ -10,10 +10,10 @@ TABLE OF CONTENTS
 1.0 - Folder structure  
 -----------------------  
 .  
-|   gruntfile.js  
-|   package.json  
-|   README.md  
-|   server.js  
+|	gruntfile.js  
+|	package.json  
+|	README.md  
+|	server.js  
 |-- src/  
 |    |   index.html  
 |	 |-- app/  

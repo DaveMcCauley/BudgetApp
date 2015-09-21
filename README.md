@@ -10,16 +10,11 @@ TABLE OF CONTENTS
 1.0 - Folder structure  
 -----------------------  
 
-    |-- .gitignore
-    |-- BUILD_FILE_JS
-    |-- gruntfile.js
-    |-- package.json
-    |-- README.md
+    |-- BUILD_FILE_JS                # comment one  
+    |-- gruntfile.js                 # comment two  
+    |-- package.json                 # comment three       
+    |-- README.md                    # comment four  
     |-- server.js
-    |-- .sass-cache
-    |   |-- f1ac25f47b8254eb6e1d77b3267c49d7bf279a01
-    |       |-- test.scssc
-    |       |-- test2.scssc
     |-- public
     |   |-- index.html
     |   |-- app
@@ -73,7 +68,7 @@ TABLE OF CONTENTS
         |-- directives
         |-- shared
 
-  
+  		(update with $ node mddir)
     
 2.3 Template for *.html files using grunt-targethtml
 ----------------------------------------------------

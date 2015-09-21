@@ -27,20 +27,21 @@
     "grunt-contrib-clean"     : "0.6.x",
     "grunt-contrib-copy"      : "0.4.x",
     "grunt-contrib-uglify"    : "0.6.0",
-    "grunt-contrib-less"      : "latest",
     "grunt-contrib-cssmin"    : "latest",
     "grunt-contrib-watch"     : "0.6.1",
     "grunt-contrib-csslint"   : "latest",
     "grunt-autoprefixer"      : "latest",
     "grunt-open"              : "0.2.3",
-    "grunt-contrib-concat"    : "latest",
     "grunt-contrib-imagemin"  : "latest",
     "grunt-contrib-htmlmin"   : "latest",
     "grunt-targethtml"        : "latest",
     "grunt-htmllint"          : "latest",
     "load-grunt-tasks"        : "latest",
     "grunt-newer"             : "latest",
-    "grunt-notify"            : "latest"
+    "grunt-notify"            : "latest",
+    "grunt-contrib-sass"      : "latest",
+    "grunt-contrib-concat-sourcemaps" : "latest"
+
 
   },
    "dependencies": {

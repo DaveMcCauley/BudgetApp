@@ -3,7 +3,7 @@
 // our wrapper function
 module.exports = function(grunt) {
 
-  //require('time-grunt')(grunt);
+  require('time-grunt')(grunt);
   require('load-grunt-tasks')(grunt);
 
   // configure grunt
@@ -15,10 +15,13 @@ module.exports = function(grunt) {
 
 
 // AUTOPREFIXER =====================================================
+// TODO: Replace with postcss. This is depricated by the maintainers
+// TODO: Use better browser query.
+// TODO: Enable source maps!!!
     autoprefixer: {
 
       options: {
-        browsers: [
+        /*browsers: [
           'Android 2.3',
           'Android >= 4',
           'Chrome >= 20',
@@ -27,13 +30,17 @@ module.exports = function(grunt) {
           'iOS >= 6',
           'Opera >= 12',
           'Safari >= 6'
-        ]
+        ],*/
+        browsers: ['last 5 versions', 'ie 8', 'ie 9', '> 1%'],
+        map: true
+
       },
 
       dev: {
         expand : true,
         cwd    : 'src/assets/',
-        src    : ['css/**/*.css'],
+        //src    : ['css/**/*.css'],
+        src    : ['css/*.css'],
         dest   : 'src/assets/'
       },
 
@@ -54,7 +61,7 @@ module.exports = function(grunt) {
 
 // CONCAT ===========================================================
     concat: {
-      dist: {
+      devcss: {
         // if some scripts depend upon eachother,
         // make sure to list them here in order
         // rather than just using the '*' wildcard.
@@ -66,6 +73,14 @@ module.exports = function(grunt) {
         //  'dist/basic.js': ['src/main.js'],
         //  'dist/with_extras.js': ['src/main.js', 'src/extras.js'],
         //},
+        options: {
+          sourceMap   : true,
+        },
+        files: {
+          'src/assets/css/core.css' : ['src/assets/css/scss/test.css',
+                                       'src/assets/css/scss/test2.css'
+                                      ]
+        }
       }
     },
 
@@ -111,10 +126,11 @@ module.exports = function(grunt) {
         },
         src: ['public/assets/css/*.css']
       }
-    },    
-    
+    },
+
 
 // CSSMIN ===========================================================
+// TOOD: Replace with POSTCSS?
     cssmin: {
       options: {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
@@ -175,9 +191,10 @@ module.exports = function(grunt) {
         }]
       }
     },
-    
+
 
 // JSHINT ===========================================================
+// TODO: Consider eslint in future?
     jshint: {
       options: {
         reporter: require('jshint-stylish')
@@ -185,31 +202,6 @@ module.exports = function(grunt) {
       // lint everything in src except external libraries
       prod: ['Gruntfile.js','src/**/*.js','!src/assets/lib/**/*.js'],
       dev: ['Gruntfile.js','src/**/*.js','!src/assets/lib/**/*.js']
-    },
-
-
-// LESS =============================================================
-    less: {
-
-      dev: {
-        files: [{  // for development, keep individual css files
-          //'dist/css/Budgetapp.css' : 'src/less/test.less'
-          //'dist/css/Budgetapp.css' : ['src/less/test.less','src/less/test2.less']
-          // 'dist/**/*.css' : 'src/**/*.less' << DOES NOT wORK
-          // for 1:1 Wildcards only work on RIGHT SIDE
-          expand : true,              // allow dynamic build
-          cwd    : 'src/assets/css',
-          src    : '**/*.less',
-          dest   : 'src/assets/css',
-          ext    : '.css'
-        }],
-      },
-
-      prod: {   // for production, compile to singel otput file.
-        files: {
-          'public/assets/css/budgetapp.css' : 'src/assets/css/**/*.less'
-          }
-      }
     },
 
 
@@ -236,7 +228,7 @@ module.exports = function(grunt) {
           message: 'Grunt has finished.', //required
         }
       },
-    },  
+    },
 
 
 // OPEN =============================================================
@@ -247,6 +239,28 @@ module.exports = function(grunt) {
       }
     },
 
+
+// SASS =============================================================
+    sass: {
+      dev: {
+        options: {
+          sourcemap: "auto",
+          lineNumbers: true,
+        },
+        //files: {
+        //  'src/assets/css/test.css' : 'src/assets/css/test.scss',
+        //  'src/assets/css/test2.css' : 'src/assets/css/test2.scss'
+        //}
+        files: [{
+          expand: true,
+          cwd: 'src/assets/css/scss',
+          src: ['*.scss'],
+          dest: 'src/assets/css/scss',
+          ext: '.css'
+        }]
+
+      }
+    },
 
 // TARGETHTML =======================================================
     targethtml : {
@@ -261,6 +275,7 @@ module.exports = function(grunt) {
 
 
 // UGLIFY ===========================================================
+// TODO: Enable source mapping!
     uglify: {
       options: {
         banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
@@ -281,14 +296,14 @@ module.exports = function(grunt) {
         files: [{
           expand  : true,                // allow dynamic build
           cwd     : 'src/assets/lib',    // curernt working dir
-          src  : '**/*.js',              // source files 
-          dest    : 'public/assets/lib',  // destination
-          flatten : true,                // remove all uncessary nexting
-          ext     : '.min.js'            // replace .js to .min.js
+          src     : '**/*.js',           // source files
+          dest    : 'public/assets/lib', // destination
+          ext     : '.min.js',           // replace .js to .min.js
+          extDot  : 'last'               // use the last dot to append to.
         }],
       }
     },
-    
+
 
 // WATCH ============================================================
     watch: {
@@ -303,8 +318,6 @@ module.exports = function(grunt) {
     } //<---<
 
   });
-
-
 
   // https://24ways.org/2013/grunt-is-not-weird-and-hard/
 

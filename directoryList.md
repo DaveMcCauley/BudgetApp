@@ -1,4 +1,4 @@
-|-- undefined
+
     |-- .gitignore
     |-- BUILD_FILE_JS
     |-- gruntfile.js

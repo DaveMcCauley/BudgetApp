@@ -109,12 +109,17 @@ var Todo = mongoose.model('Todo', {
 		});
 	});
 
+	// API Documentation file
+	app.get('/api/doc', function(req,res) {
+		// load the application document!
+		res.sendfile('./public/APIDoc.html');
+	})
 
 	// application --------------------
 
 	app.get('*',function(req, res) {
 		// load the single view file, angular takes care of UI
-		res.sendfile('./public/index.html')
+		res.sendfile('./public/index.html');
 	});
 
 

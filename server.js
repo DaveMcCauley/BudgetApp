@@ -21,7 +21,16 @@
 
 // configuration ======================
 	// connect to the mongo database
-	mongoose.connect('mongodb://McTester:artgum@ds031903.mongolab.com:31903/budgetapp')
+	//mongoose.connect('mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu');
+    mongoose.connect('mongodb://node:node@ds053784.mongolab.com:53784/nodetest');
+
+    // verify connection
+    mongoose.connection.on('error', function (err) {
+ 		// Do something
+ 		console.log('ERROR');
+ 		console.log(err);
+	});
+
 
 	// set the static files location (this is folder that grunt builds into)
 	app.use(express.static(__dirname + '/public'));

@@ -39,5 +39,69 @@
   </div>
 </div>
 
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h2 class="panel-title">
+                <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
+                <a href="#collapse-764" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Headline 1</a>
+      </h2>
+  </div>
+  <div id="collapse-764" class="panel-collapse collapse">
+    <div class="panel-body">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">
+              <a href="#collapse-765" data-parent="#collapsible-764" class="accordion-toggle" data-toggle="collapse">Headline 1.1</a>
+            </h2>
+        </div>
+        <div id="collapse-765" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Text....</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            <a href="#collapse-766" data-parent="#collapsible-764" class="accordion-toggle" data-toggle="collapse">Headline 1.2</a>
+          </h2>
+        </div>
+        <div id="collapse-766" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Text....</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+            <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
+      <a href="#collapse-767" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Headline 2</a>
+    </h2>
+  </div>
+  <div id="collapse-767" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>Text 2</p>
+    </div>
+  </div>
+</div>
+
 </body>
+
+<script>
+$('.closeall').click(function(){
+  $(this).parents('.panel-heading')
+    .next('.panel-collapse')
+    .collapse('show')
+    .find('.panel-collapse')
+    .collapse('toggle');
+});
+</script>
 </html>

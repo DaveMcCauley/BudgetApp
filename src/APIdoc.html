@@ -8,36 +8,107 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Collapsible Panel</h2>
-  <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-        </h4>
-      </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">Panel Body</div>
-        <div class="panel-footer">Panel Footer</div>
-      </div>
-    </div>
-  </div>
-  <div class="panel-group">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse2">Another Collapsible panel</a>
-          <a data-toggle="collapse" href="#collapse2">Another tirgger?</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Another Panel Body</div>
-        <div class="panel-footer">Another Panel Footer</div>
-      </div>
-    </div>
-  </div>
+<h1>API Docus</h1>
+<h2>This is the API spec</h2>
+
+
+<div id="resources_wrapper" class="container">
+	<!-- begin resource list -->
+	<ul id="resources">
+		<li id="resource_budget">
+			<div class="resource-heading">
+				<a href="#budget_endpoint_list" data-parent="resources" data-toggle="collapse">
+					Budget :: 
+				</a>
+			</div>	
+			<!-- begin budget endpoint list -->
+			<ul id="budget_endpoint_list" class="endpoints collapse">
+				<li class="endpoint"><!-- Budget/POST/ -->
+					<div class="endpoint-heading">
+						<a href="#budget_post_content" data-parent="budget_endpoint_list" data-toggle="collapse">
+							POST: /budget
+						</a>
+					</div>
+					<div id="budget_post_content" class="endpoint-content collapse">
+						Budget posting content
+					</div>
+				</li>
+				<li class="endpoint"><!-- budget/PUT/ -->
+					<div class="endpoint-heading">
+						<a href="#budget_put_content" data-parent="budget_endpoint_list" data-toggle="collapse">
+							PUT: /budget
+						</a>
+					</div>
+					<div id="budget_put_content" class="endpoint-content collapse">
+						Budget PUT content
+					</div>
+				</li>
+			</ul><!-- end budget endpoint list -->
+		</li>
+		<li id="resource_user">
+			<div class="resource-heading">
+				<a href="#user_endpoint_list" data-parent="resources" data-toggle="collapse">
+					User ::
+				</a>
+			</div>
+			<!-- begin user endpoint list -->
+			<ul id="user_endpoint_list" class="endpoints collapse">
+				<li class="endpoint">
+					<div class="endpoint-heading">
+						<a href="#user_post_content" data-parent="user-endpoint-list" data-toggle="collapse">
+							POST: /user
+						</a>
+					</div>
+					<div id="user_post_content" class="endpoint-content collapse">
+						user posting content
+					</div>
+				</li>
+				<li class="endpoint">
+					<div class="endpoint-heading">
+						<a href="#user_put_content" data-parent="user-endpoint-list" data-toggle="collapse">
+							PUT: /user
+						</a>
+					</div>
+					<div id="user_put_content" class="endpoint-content collapse">
+						Budget PUT content
+					</div>
+				</li>
+			</ul><!-- end user endpoint list -->			
+		</li>
+		<li id="resource_[resource]">
+			<div class="resource-heading">
+				<a href="[resource]_endpoint_list" data-parent="resources" data-toggle= "collapse">
+					[resource]::
+				</a>
+			</div>
+			<!-- being [resource] endpoint list -->
+			<ul id="[resource]_endpoint_list" class="endpoints collapse">
+				<li class="endpoint"> <!--[resource]\[endpoint]\{params} -->
+					<div class="endpoint-heading">
+						<a href="#[resource]_[endpoint]_content" data-parent="[resource]_endpoint_list" data-toggle="collapse">
+							[Endpoint]/
+						</a>
+					</div>
+					<div id="[resource]_[endpoint]_content" class="endpoint-content collapse">
+						[Resource] \ [endpoint] \ content data
+					</div>
+				</li>
+				<li class="endpoint"> <!--[resource]\[endpoint 2]\{params} -->
+					<div class="endpoint-heading">
+						<a href="#[resource]_[endpoint 2]_content" data-parent="[resource]_endpoint_list" data-toggle="collapse">
+							[Endpoint 2]/
+						</a>
+					</div>
+					<div id="[resource]_[endpoint 2]_content" class="endpoint-content collapse">
+						[Resource] \ [endpoint 2] \ content data
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
 </div>
+
+
 
 
 
@@ -46,34 +117,34 @@
   <div class="panel-heading">
       <h2 class="panel-title">
                 <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
-                <a href="#collapse-764" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Headline 1</a>
+                <a href="#budget-ops" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Budget:</a>
       </h2>
   </div>
-  <div id="collapse-764" class="panel-collapse collapse">
+  <div id="budget-ops" class="panel-collapse collapse"><!--764-->
     <div class="panel-body">
       <div class="panel panel-default">
         <div class="panel-heading">
             <h2 class="panel-title">
-              <a href="#collapse-765" data-parent="#collapsible-764" class="accordion-toggle" data-toggle="collapse">Headline 1.1</a>
+              <a href="#budget-op-put" data-parent="#budget-ops" class="accordion-toggle" data-toggle="collapse">PUT \budget</a>
             </h2>
         </div>
-        <div id="collapse-765" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Text....</p>
-          </div>
-        </div>
+						<div id="budget-op-put" class="panel-collapse collapse">
+							<div class="panel-body">
+								<p>Text....</p>
+							</div>
+						</div>
       </div>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h2 class="panel-title">
-            <a href="#collapse-766" data-parent="#collapsible-764" class="accordion-toggle" data-toggle="collapse">Headline 1.2</a>
+            <a href="#budget-op-post" data-parent="#budget-ops" class="accordion-toggle" data-toggle="collapse">POST \budget</a>
           </h2>
         </div>
-        <div id="collapse-766" class="panel-collapse collapse">
-          <div class="panel-body">
-            <p>Text....</p>
-          </div>
-        </div>
+					<div id="budget-op-post" class="panel-collapse collapse">
+						<div class="panel-body">
+							<p>Text....</p>
+						</div>
+					</div>
       </div>
     </div>
   </div>
@@ -83,7 +154,7 @@
   <div class="panel-heading">
     <h2 class="panel-title">
             <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
-      <a href="#collapse-767" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Headline 2</a>
+      <a href="#collapse-767" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">User</a>
     </h2>
   </div>
   <div id="collapse-767" class="panel-collapse collapse">

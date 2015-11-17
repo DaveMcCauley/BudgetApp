@@ -111,22 +111,25 @@ a.endpoint-path {
  margin-right: 10px;
 }
 
+/* NOTE: .collapse does not like padding on the
+   animated div. Don't do it, or will look wonky */
 .endpoint-content {
   border-color: inherit;
   border-style: solid;
   border-width: 1px;
-  padding 10px;
 	margin-bottom: 10px;
   margin-top: -11px;
 }
 
 .endpoint-content h1 {
 	font-size: $baseTextSize;
+	margin-left: 10px;
 }
 
 .endpoint-content h2 {
 	color: $regGray;
 	font-size: $smallTextSize;
+	margin-left: 10px;
 }
 
 

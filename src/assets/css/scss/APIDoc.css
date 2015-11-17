@@ -81,7 +81,6 @@ a.endpoint-path {
   border-color: inherit;
   border-style: solid;
   border-width: 1px;
-	padding: 10px;
   margin-bottom: 10px;
   margin-top: -11px; }
 	
@@ -89,11 +88,13 @@ a.endpoint-path {
 .endpoint-content h1 {
 	font-size: 14px;
 	color: rgb(120,120,120);
+	margin-left: 10px;
 }
 
 .endpoint-content h2 {
 	color: rgb(120,120,120);
 	font-size: 13px;
+	margin-left: 10px;
 }
 
 

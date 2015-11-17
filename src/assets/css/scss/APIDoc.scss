@@ -1,0 +1,195 @@
+$headerTextSize: 16px;
+$baseTextSize:   14px;
+$smallTextSize:  13px;
+$opTextSize:     11px;
+$codeTextSize:   11px;
+
+$regBlack: rgb(51,51,51);
+$regWhite: rgb(230,230,230);
+$regGray:  rgb(120,120,120);
+$regLtGray: rgb(210,210,210);
+
+$colorPOSTbg:      rgb(231, 246, 236);
+$colorPOSTfeat:    rgb(16, 165, 74);
+$colorPOSTborder:  rgb(195,232,209);
+$colorPOSTrev:     rgb(250,250,250);
+
+$colorPUTbg:      rgb(249,242,233);
+$colorPUTfeat:    rgb(197,134,43);
+$colorPUTborder:  rgb(240,224,202);
+$colorPUTrev:     rgb(250,250,250);
+
+$colorGETbg:      rgb(231,240,247);
+$colorGETfeat:    rgb(15,106,180);
+$colorGETborder:  rgb(195,217,236);
+$colorGETrev:     rgb(250,250,250);
+
+$colorDELETEbg:     rgb(245,232,232);
+$colorDELETEfeat:   rgb(164,30,34);
+$colorDELETEborder: rgb(232,198,199);
+$colorDELETErev:    rgb(250,250,250);
+
+$borderRadius: 5px;
+$borderWidth:  1px;
+
+.dinky {
+  color: #f00;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+li.resource-item:not(:first-child) {
+  border-top-color: $regLtGray;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 10px;
+}
+
+.resource-heading {
+  color: $regGray;
+  font-size: $headerTextSize;
+  font-weight: bold;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.resource-heading a {
+  color: $regBlack;
+}
+
+.resource-ctrls a {
+  font-size: $baseTextSize;
+  font-weight: normal;
+}
+
+.endpoint-heading {
+  border-style: solid;
+  border-width: $borderWidth;
+  border-color: inherit;
+  margin-bottom: 10px;
+}
+
+.operator {
+  border-radius: $borderRadius;
+  display: inline-block;
+  font-size: $opTextSize;
+  font-weight: bold;
+  padding-top: 7px;
+  text-align: center;
+  width: 50px;
+  height: 30px;
+}
+
+a:link.operator,
+a:visited.operator,
+a:hover.operator,
+a:active.operator {
+  text-decoration: none;
+}
+
+
+.endpoint-path {
+  font-size: $baseTextSize;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+a.endpoint-path {
+  color: $regBlack
+}
+
+.endpoint-desc {
+  padding-top: 5px;
+ margin-right: 5px;
+}
+
+.endpoint-content {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  margin-top: -11px;
+}
+
+/*
+ * styling for the POST operator type
+ */
+
+.post {
+  background-color: $colorPOSTbg;
+  border-color: $colorPOSTborder;
+}
+
+.post .operator {
+  color: $colorPOSTrev;
+  background-color: $colorPOSTfeat;
+}
+
+.post .endpoint-desc {
+  color: $colorPOSTfeat;
+}
+
+/*
+ * styling for the PUT operator type
+ */
+
+.put {
+  background-color: $colorPUTbg;
+  border-color: $colorPUTborder;
+}
+
+.put .operator {
+  color: $colorPUTrev;
+  background-color: $colorPUTfeat;
+}
+
+.put .endpoint-desc {
+  color: $colorPUTfeat;
+}
+
+/*
+ * styling for the GET operator type
+ */
+
+.get {
+  background-color: $colorGETbg;
+  border-color: $colorGETborder;
+}
+
+.get .operator {
+  color: $colorGETrev;
+  background-color: $colorGETfeat;
+}
+
+.get .endpoint-desc {
+  color: $colorGETfeat;
+}
+
+/*
+ * styling for the DELETE operator type
+ */
+
+.delete {
+  background-color: $colorDELETEbg;
+  border-color: $colorDELETEborder;
+}
+
+.delete .operator {
+  color: $colorDELETErev;
+  background-color: $colorDELETEfeat;
+}
+
+.delete .endpoint-desc {
+  color: $colorDELETEfeat;
+}
+
+
+

@@ -1,0 +1,155 @@
+/* line 35, APIDoc.scss */
+.dinky {
+  color: #f00; }
+
+/* line 39, APIDoc.scss */
+html {
+  overflow-y: scroll; }
+
+/* line 43, APIDoc.scss */
+ul,
+li {
+  list-style: none;
+  padding-left: 0; }
+
+/* line 49, APIDoc.scss */
+li.resource-item:not(:first-child) {
+  border-top-color: #d2d2d2;
+  border-top-style: solid;
+  border-top-width: 1px;
+  padding-top: 10px; }
+
+/* line 56, APIDoc.scss */
+.resource-heading {
+  color: #787878;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: auto;
+  margin-bottom: 10px; }
+
+/* line 64, APIDoc.scss */
+.resource-heading a {
+  color: #333333; }
+
+/* line 68, APIDoc.scss */
+.resource-ctrls a {
+  font-size: 14px;
+  font-weight: normal; }
+
+/* line 73, APIDoc.scss */
+.endpoint-heading {
+  border-style: solid;
+  border-width: 1px;
+  border-color: inherit;
+  margin-bottom: 10px; }
+
+/* line 80, APIDoc.scss */
+.operator {
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  padding-top: 7px;
+  text-align: center;
+  width: 50px;
+  height: 30px; }
+
+/* line 91, APIDoc.scss */
+a:link.operator,
+a:visited.operator,
+a:hover.operator,
+a:active.operator {
+  text-decoration: none; }
+
+/* line 99, APIDoc.scss */
+.endpoint-path {
+  font-size: 14px;
+  padding-top: 5px;
+  margin-left: 10px; }
+
+/* line 105, APIDoc.scss */
+a.endpoint-path {
+  color: #333333; }
+
+/* line 109, APIDoc.scss */
+.endpoint-desc {
+  padding-top: 5px;
+  margin-right: 5px; }
+
+/* line 114, APIDoc.scss */
+.endpoint-content {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 10px;
+  margin-top: -11px; }
+
+/*
+ * styling for the POST operator type
+ */
+/* line 126, APIDoc.scss */
+.post {
+  background-color: #e7f6ec;
+  border-color: #c3e8d1; }
+
+/* line 131, APIDoc.scss */
+.post .operator {
+  color: #fafafa;
+  background-color: #10a54a; }
+
+/* line 136, APIDoc.scss */
+.post .endpoint-desc {
+  color: #10a54a; }
+
+/*
+ * styling for the PUT operator type
+ */
+/* line 144, APIDoc.scss */
+.put {
+  background-color: #f9f2e9;
+  border-color: #f0e0ca; }
+
+/* line 149, APIDoc.scss */
+.put .operator {
+  color: #fafafa;
+  background-color: #c5862b; }
+
+/* line 154, APIDoc.scss */
+.put .endpoint-desc {
+  color: #c5862b; }
+
+/*
+ * styling for the GET operator type
+ */
+/* line 162, APIDoc.scss */
+.get {
+  background-color: #e7f0f7;
+  border-color: #c3d9ec; }
+
+/* line 167, APIDoc.scss */
+.get .operator {
+  color: #fafafa;
+  background-color: #0f6ab4; }
+
+/* line 172, APIDoc.scss */
+.get .endpoint-desc {
+  color: #0f6ab4; }
+
+/*
+ * styling for the DELETE operator type
+ */
+/* line 180, APIDoc.scss */
+.delete {
+  background-color: #f5e8e8;
+  border-color: #e8c6c7; }
+
+/* line 185, APIDoc.scss */
+.delete .operator {
+  color: #fafafa;
+  background-color: #a41e22; }
+
+/* line 190, APIDoc.scss */
+.delete .endpoint-desc {
+  color: #a41e22; }
+
+/*# sourceMappingURL=APIDoc.css.map */

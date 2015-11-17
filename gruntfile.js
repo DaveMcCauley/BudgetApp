@@ -314,6 +314,10 @@ module.exports = function(grunt) {
       scripts: {
         files: 'src/**/*.js',
         tasks: ['jshint']
+      },
+      sass: {
+        files: ['src/**/*.scss'],
+        tasks: ['sass']
       }
     } //<---<
 

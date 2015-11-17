@@ -3,176 +3,267 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/scss/apidoc.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<h1>API Docus</h1>
-<h2>This is the API spec</h2>
-
-
-<div id="resources_wrapper" class="container">
-	<!-- begin resource list -->
-	<ul id="resources">
-		<li id="resource_budget">
-			<div class="resource-heading">
-				<a href="#budget_endpoint_list" data-parent="resources" data-toggle="collapse">
-					Budget :: 
-				</a>
-			</div>	
-			<!-- begin budget endpoint list -->
-			<ul id="budget_endpoint_list" class="endpoints collapse">
-				<li class="endpoint"><!-- Budget/POST/ -->
-					<div class="endpoint-heading">
-						<a href="#budget_post_content" data-parent="budget_endpoint_list" data-toggle="collapse">
-							POST: /budget
-						</a>
-					</div>
-					<div id="budget_post_content" class="endpoint-content collapse">
-						Budget posting content
-					</div>
-				</li>
-				<li class="endpoint"><!-- budget/PUT/ -->
-					<div class="endpoint-heading">
-						<a href="#budget_put_content" data-parent="budget_endpoint_list" data-toggle="collapse">
-							PUT: /budget
-						</a>
-					</div>
-					<div id="budget_put_content" class="endpoint-content collapse">
-						Budget PUT content
-					</div>
-				</li>
-			</ul><!-- end budget endpoint list -->
-		</li>
-		<li id="resource_user">
-			<div class="resource-heading">
-				<a href="#user_endpoint_list" data-parent="resources" data-toggle="collapse">
-					User ::
-				</a>
-			</div>
-			<!-- begin user endpoint list -->
-			<ul id="user_endpoint_list" class="endpoints collapse">
-				<li class="endpoint">
-					<div class="endpoint-heading">
-						<a href="#user_post_content" data-parent="user-endpoint-list" data-toggle="collapse">
-							POST: /user
-						</a>
-					</div>
-					<div id="user_post_content" class="endpoint-content collapse">
-						user posting content
-					</div>
-				</li>
-				<li class="endpoint">
-					<div class="endpoint-heading">
-						<a href="#user_put_content" data-parent="user-endpoint-list" data-toggle="collapse">
-							PUT: /user
-						</a>
-					</div>
-					<div id="user_put_content" class="endpoint-content collapse">
-						Budget PUT content
-					</div>
-				</li>
-			</ul><!-- end user endpoint list -->			
-		</li>
-		<li id="resource_[resource]">
-			<div class="resource-heading">
-				<a href="[resource]_endpoint_list" data-parent="resources" data-toggle= "collapse">
-					[resource]::
-				</a>
-			</div>
-			<!-- being [resource] endpoint list -->
-			<ul id="[resource]_endpoint_list" class="endpoints collapse">
-				<li class="endpoint"> <!--[resource]\[endpoint]\{params} -->
-					<div class="endpoint-heading">
-						<a href="#[resource]_[endpoint]_content" data-parent="[resource]_endpoint_list" data-toggle="collapse">
-							[Endpoint]/
-						</a>
-					</div>
-					<div id="[resource]_[endpoint]_content" class="endpoint-content collapse">
-						[Resource] \ [endpoint] \ content data
-					</div>
-				</li>
-				<li class="endpoint"> <!--[resource]\[endpoint 2]\{params} -->
-					<div class="endpoint-heading">
-						<a href="#[resource]_[endpoint 2]_content" data-parent="[resource]_endpoint_list" data-toggle="collapse">
-							[Endpoint 2]/
-						</a>
-					</div>
-					<div id="[resource]_[endpoint 2]_content" class="endpoint-content collapse">
-						[Resource] \ [endpoint 2] \ content data
-					</div>
-				</li>
-			</ul>
-		</li>
-	</ul>
-</div>
-
-
-
-
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-      <h2 class="panel-title">
-                <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
-                <a href="#budget-ops" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">Budget:</a>
-      </h2>
+  <div class="intro container">
+    <h1>API Docus</h1>
+    <h2>This is the API spec</h2>
   </div>
-  <div id="budget-ops" class="panel-collapse collapse"><!--764-->
-    <div class="panel-body">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2 class="panel-title">
-              <a href="#budget-op-put" data-parent="#budget-ops" class="accordion-toggle" data-toggle="collapse">PUT \budget</a>
-            </h2>
+  <div id="resources_wrapper" class="container">
+  	<!-- begin resource list -->
+  	<ul id="resources">
+  		<li id="resource_budget" class="resource-item">
+        <!-- budget resource heading -->
+  			<div class="resource-heading">
+  				<a href="#budget_endpoint_list" data-toggle="collapse">
+  					budget
+  				</a>
+          <span>: Budget Operations</span>
+          <div class="resource-ctrls pull-right">
+            <a href="#budget_endpoint_list" data-toggle="collapse">
+              Show/Hide
+            </a>&nbsp|&nbsp
+            <a href="#budget_endpoint_list" class="listops">
+              List Operations
+            </a>&nbsp|&nbsp
+            <a href="#budget_endpoint_list" class="expandops">
+              Expand Operations
+            </a>
+          </div>
+  			</div>
+  			<!-- begin budget endpoint list -->
+  			<ul id="budget_endpoint_list" class="endpoint-list collapse">
+  				<li class="post endpoint"><!-- Budget/POST/ -->
+  					<div class="endpoint-heading">
+  						<a href="#budget_post_content" data-toggle="collapse" class="expcontent operator">POST</a>
+              <a href="#budget_post_content" data-toggle="collapse" class="expcontent endpoint-path">/budget</a>
+              <a href="#budget_post_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">add a budget to the NDS</a>
+  					</div>
+  					<div id="budget_post_content" class="endpoint-content collapse">
+  						Budget posting content
+  					</div>
+  				</li>
+  				<li class="put endpoint"><!-- budget/PUT/ -->
+  					<div class="endpoint-heading">
+  						<a href="#budget_put_content" data-toggle="collapse" class="expcontent operator">PUT</a>
+              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-path">/budget</a>
+              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">revise a budget in the NDS</a>
+  					</div>
+  					<div id="budget_put_content" class="endpoint-content collapse">
+  						Budget PUT content, blah, blah, blah
+  					</div>
+  				</li>
+          <li class="get endpoint"><!-- budget/GET/{id} -->
+            <div class="endpoint-heading">
+              <a href="#budget_get_content" data-parent="budget_endpoint_list" data-toggle="collapse" class="expcontent operator">GET</a>
+              <a href="#budget_get_content" data-toggle="collapse" class="expcontent endpoint-path">/budget/{id}</a>
+              <a href="#budget_get_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">find a budget by ID</a>
+            </div>
+            <div id="budget_get_content" class="endpoint-content collapse">
+              Budget GET content, blah, blah, blah
+            </div>
+          </li>
+          <li class="get endpoint"><!-- budget/GET/{other} -->
+            <div class="endpoint-heading">
+              <a href="#budget_get2_content" data-parent="budget_endpoint_list" data-toggle="collapse" class="expcontent operator">GET</a>
+              <a href="#budget_get2_content" data-toggle="collapse" class="expcontent endpoint-path">/budget/{other}</a>
+              <a href="#budget_get2_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">find a budget by keyword</a>
+            </div>
+            <div id="budget_get2_content" class="endpoint-content collapse">
+              Budget GET2 content, blah, blah, blah, keyward
+            </div>
+          </li>
+          <li class="delete endpoint"><!-- budget/DELETE/{id} -->
+            <div class="endpoint-heading">
+              <a href="#budget_delete_content" data-parent="budget_endpoint_list" data-toggle="collapse" class="expcontent operator">DELETE</a>
+              <a href="#budget_delete_content" data-toggle="collapse" data-toggle="collapse" class="expcontent endpoint-path">/budget/delete/{id}</a>
+              <a href="#budget_delete_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">delete a budget</a>
+            </div>
+            <div id="budget_delete_content" class="endpoint-content collapse">
+              Budget DELETE content, blah, blah, blah
+            </div>
+          </li>
+  			</ul><!-- end budget endpoint list -->
+  		</li>
+  		<li id="resource_user" class="resource-item">
+  			<!-- USER resource -->
+        <div class="resource-heading">
+  				<a href="#user_endpoint_list" data-toggle="collapse">
+  					user
+  				</a>
+          <span>: User Management</span>
+          <div class="resource-ctrls pull-right">
+            <a href="#user_endpoint_list" data-toggle="collapse">
+              Show/Hide
+            </a>&nbsp|&nbsp
+            <a href="#user_endpoint_list" class="listops">
+              List Operations
+            </a>&nbsp|&nbsp
+            <a href="#user_endpoint_list" class="expandops">
+              Expand Operations
+            </a>
+          </div>
+  			</div>
+  			<!-- begin user endpoint list -->
+        <ul id="user_endpoint_list" class="endpoint-list collapse">
+          <li class="post endpoint"><!-- user/POST/ -->
+            <div class="endpoint-heading">
+              <a href="#user_post_content" data-toggle="collapse" class="expcontent operator">POST</a>
+              <a href="#user_post_content" data-toggle="collapse" class="expcontent endpoint-path">/user</a>
+              <a href="#user_post_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">add a user to the NDS</a>
+            </div>
+            <div id="user_post_content" class="endpoint-content collapse">
+              user posting content
+            </div>
+          </li>
+          <li class="put endpoint"><!-- user/PUT/ -->
+            <div class="endpoint-heading">
+              <a href="#user_put_content" data-toggle="collapse" class="expcontent operator">PUT</a>
+              <a href="#user_put_content" data-toggle="collapse" class="expcontent endpoint-path">/user</a>
+              <a href="#user_put_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">revise a user in the NDS</a>
+            </div>
+            <div id="user_put_content" class="endpoint-content collapse">
+              user PUT content, blah, blah, blah
+            </div>
+          </li>
+          <li class="get endpoint"><!-- user/GET/{id} -->
+            <div class="endpoint-heading">
+              <a href="#user_get_content" data-parent="user_endpoint_list" data-toggle="collapse" class="expcontent operator">GET</a>
+              <a href="#user_get_content" data-toggle="collapse" class="expcontent endpoint-path">/user/{id}</a>
+              <a href="#user_get_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">find a user by ID</a>
+            </div>
+            <div id="user_get_content" class="endpoint-content collapse">
+              user GET content, blah, blah, blah
+            </div>
+          </li>
+          <li class="get endpoint"><!-- user/GET/{other} -->
+            <div class="endpoint-heading">
+              <a href="#user_get2_content" data-parent="user_endpoint_list" data-toggle="collapse" class="expcontent operator">GET</a>
+              <a href="#user_get2_content" data-toggle="collapse" class="expcontent endpoint-path">/user/{other}</a>
+              <a href="#user_get2_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">find a user by keyword</a>
+            </div>
+            <div id="user_get2_content" class="endpoint-content collapse">
+              user GET2 content, blah, blah, blah, keyward
+            </div>
+          </li>
+          <li class="delete endpoint"><!-- user/DELETE/{id} -->
+            <div class="endpoint-heading">
+              <a href="#user_delete_content" data-parent="user_endpoint_list" data-toggle="collapse" class="expcontent operator">DELETE</a>
+              <a href="#user_delete_content" data-toggle="collapse" data-toggle="collapse" class="expcontent endpoint-path">/user/delete/{id}</a>
+              <a href="#user_delete_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">delete a user</a>
+            </div>
+            <div id="user_delete_content" class="endpoint-content collapse">
+              user DELETE content, blah, blah, blah
+            </div>
+          </li>
+        </ul><!-- end user endpoint list -->
+  		</li>
+
+      <li id="resource_cost" class="resource-item">
+        <!-- cost resource heading -->
+        <div class="resource-heading">
+          <a href="#cost_endpoint_list" data-toggle="collapse">
+            budget
+          </a>
+          <span>: Budget Operations</span>
+          <div class="resource-ctrls pull-right">
+            <a href="#cost_endpoint_list" data-toggle="collapse">
+              Show/Hide
+            </a>&nbsp|&nbsp
+            <a href="#cost_endpoint_list" class="listops">
+              List Operations
+            </a>&nbsp|&nbsp
+            <a href="#cost_endpoint_list" class="expandops">
+              Expand Operations
+            </a>
+          </div>
         </div>
-						<div id="budget-op-put" class="panel-collapse collapse">
-							<div class="panel-body">
-								<p>Text....</p>
-							</div>
-						</div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h2 class="panel-title">
-            <a href="#budget-op-post" data-parent="#budget-ops" class="accordion-toggle" data-toggle="collapse">POST \budget</a>
-          </h2>
-        </div>
-					<div id="budget-op-post" class="panel-collapse collapse">
-						<div class="panel-body">
-							<p>Text....</p>
-						</div>
-					</div>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- begin cost endpoint list -->
+        <ul id="cost_endpoint_list" class="endpoint-list collapse">
+          <li class="post endpoint"><!-- Budget/POST/ -->
+            <div class="endpoint-heading">
+              <a href="#cost_post_content" data-toggle="collapse" class="expcontent operator">POST</a>
+              <a href="#cost_post_content" data-toggle="collapse" class="expcontent endpoint-path">/cost</a>
+              <a href="#cost_post_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">add a cost to the NDS</a>
+            </div>
+            <div id="cost_post_content" class="endpoint-content collapse">
+              COST posting content
+            </div>
+          </li>
+          <li class="put endpoint"><!-- budget/PUT/ -->
+            <div class="endpoint-heading">
+              <a href="#cost_put_content" data-toggle="collapse" class="expcontent operator">PUT</a>
+              <a href="#cost_put_content" data-toggle="collapse" class="expcontent endpoint-path">/cost</a>
+              <a href="#cost_put_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">revise a cost in the NDS</a>
+            </div>
+            <div id="cost_put_content" class="endpoint-content collapse">
+              COST PUT content, blah, blah, blah
+            </div>
+          </li>
+          <li class="get endpoint"><!-- budget/GET/{id} -->
+            <div class="endpoint-heading">
+              <a href="#cost_get_content" data-parent="cost_endpoint_list" data-toggle="collapse" class="expcontent operator">GET</a>
+              <a href="#cost_get_content" data-toggle="collapse" class="expcontent endpoint-path">/budget/{id}</a>
+              <a href="#cost_get_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">find a budget by ID</a>
+            </div>
+            <div id="cost_get_content" class="endpoint-content collapse">
+              Cost GET content, blah, blah, blah
+            </div>
+          </li>
+          <li class="delete endpoint"><!-- cost/DELETE/{id} -->
+            <div class="endpoint-heading">
+              <a href="#cost_delete_content" data-parent="cost_endpoint_list" data-toggle="collapse" class="expcontent operator">DELETE</a>
+              <a href="#cost_delete_content" data-toggle="collapse" data-toggle="collapse" class="expcontent endpoint-path">/budget/delete/{id}</a>
+              <a href="#cost_delete_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">delete a budget</a>
+            </div>
+            <div id="cost_delete_content" class="endpoint-content collapse">
+              Budget DELETE content, blah, blah, blah
+            </div>
+          </li>
+          <li class="delete endpoint"><!-- cost/DELETE/{id}{entry} -->
+            <div class="endpoint-heading">
+              <a href="#cost_delete2_content" data-parent="cost_endpoint_list" data-toggle="collapse" class="expontent operator">DELETE</a>
+              <a href="#cost_delete2_content" data-parent="cost_endpoint_list" data-toggle="collapse" class="expcontent endpoint-path">/cost/delete/{id}{entry}</a>
+              <a href="#cost_delete2_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">delete a budget by id</a>
+            </div>
+            <div id="cost_delete2_content" class="endpoint-content collapse">
+              Antoehr BUdget deltetion conent
+            </div>
+          </li>
+        </ul><!-- end budget endpoint list -->
+      </li>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2 class="panel-title">
-            <span class="pull-right"><button type="button" class="closeall btn btn-success btn-xs">open/close all elements whithin this element</button></span>
-      <a href="#collapse-767" data-parent="#collapsible-" class="accordion-toggle" data-toggle="collapse">User</a>
-    </h2>
+  	</ul>
   </div>
-  <div id="collapse-767" class="panel-collapse collapse">
-    <div class="panel-body">
-      <p>Text 2</p>
-    </div>
-  </div>
-</div>
+
 
 </body>
 
 <script>
-$('.closeall').click(function(){
-  $(this).parents('.panel-heading')
-    .next('.panel-collapse')
+$('.listops').click(function(event) {
+  event.preventDefault();
+  $(this).parents('.resource-heading')
+    .next('.endpoint-list')
     .collapse('show')
-    .find('.panel-collapse')
-    .collapse('toggle');
+    .find('.endpoint-content')
+    .collapse('hide');
 });
+$('.expandops').click(function(event) {
+  event.preventDefault();
+  $(this).parents('.resource-heading')
+    .next('.endpoint-list')
+    .collapse('show')
+    .find('.endpoint-content')
+    .collapse('show');
+});
+$('.expcontent').click(function(event) {
+  event.preventDefault();
+  $(this).parents('.endpoint')
+  .find('.ednpoint-content')
+  .collapse('toggle');
+})
 </script>
 </html>

@@ -74,15 +74,29 @@ a.endpoint-path {
 /* line 109, APIDoc.scss */
 .endpoint-desc {
   padding-top: 5px;
-  margin-right: 5px; }
+  margin-right: 10px; }
 
 /* line 114, APIDoc.scss */
 .endpoint-content {
   border-color: inherit;
   border-style: solid;
   border-width: 1px;
+	padding: 10px;
   margin-bottom: 10px;
   margin-top: -11px; }
+	
+	
+.endpoint-content h1 {
+	font-size: 14px;
+	color: rgb(120,120,120);
+}
+
+.endpoint-content h2 {
+	color: rgb(120,120,120);
+	font-size: 13px;
+}
+
+
 
 /*
  * styling for the POST operator type
@@ -100,6 +114,12 @@ a.endpoint-path {
 /* line 136, APIDoc.scss */
 .post .endpoint-desc {
   color: #10a54a; }
+	
+.post .endpoint-content h1 {
+	color: #10a54a;
+}
+
+
 
 /*
  * styling for the PUT operator type
@@ -153,3 +173,4 @@ a.endpoint-path {
   color: #a41e22; }
 
 /*# sourceMappingURL=APIDoc.css.map */
+

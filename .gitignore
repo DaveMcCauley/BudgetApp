@@ -1,3 +1,6 @@
 node_modules
 public
 .sass-cache/
+src/assets/**/*.map
+src/assets/css/core.css.map
+

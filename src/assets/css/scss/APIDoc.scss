@@ -32,9 +32,9 @@ $colorDELETErev:    rgb(250,250,250);
 $borderRadius: 5px;
 $borderWidth:  1px;
 
-.dinky {
-  color: #f00;
-}
+$color-json-bg:       rgb(250,250,250);
+$color-json-property: rgb(85,85,170);
+$font-json-size:      13px;
 
 html {
   overflow-y: scroll;
@@ -44,6 +44,33 @@ ul,
 li {
   list-style: none;
   padding-left: 0;
+}
+
+table {
+  margin: 0 10px 0;
+  font-weight: 500;
+}
+
+thead {
+  border-bottom-style: solid;
+  border-color: $regLtGray;
+  border-bottom-width: 1px;
+  color: $regGray;
+  font-size: $opTextSize;
+}
+
+tbody {
+  color: $regBlack;
+  font-size: $baseTextSize;
+}
+
+td {
+  padding-top: 0;
+  padding-bottom:4px;
+}
+
+td:first-child {
+  padding-top: 4px;
 }
 
 li.resource-item:not(:first-child) {
@@ -107,7 +134,7 @@ a.endpoint-path {
 }
 
 .endpoint-desc {
-  padding-top: 5px;
+ padding-top: 5px;
  margin-right: 10px;
 }
 
@@ -131,8 +158,6 @@ a.endpoint-path {
 	font-size: $smallTextSize;
 	margin-left: 10px;
 }
-
-
 
 /*
  * styling for the POST operator type
@@ -174,6 +199,10 @@ a.endpoint-path {
   color: $colorPUTfeat;
 }
 
+.put .endpoint-content h1 {
+  color: $colorPUTfeat;
+}
+
 /*
  * styling for the GET operator type
  */
@@ -189,6 +218,10 @@ a.endpoint-path {
 }
 
 .get .endpoint-desc {
+  color: $colorGETfeat;
+}
+
+.get .endpoint-content h1 {
   color: $colorGETfeat;
 }
 
@@ -210,5 +243,88 @@ a.endpoint-path {
   color: $colorDELETEfeat;
 }
 
+.delete .endpoint-content h1 {
+  color: $colorDELETEfeat;
+}
+
+/*
+ * These are the return lozenges
+ */
+
+.return {
+  border-radius: 3px;
+  color: $regWhite;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
+  height: 16px;
+}
+
+.ok {
+  background-color: rgb(20,137,44);
+}
+
+.err {
+  background-color: rgb(208,68,55);
+}
 
 
+/*
+ * My JSON styling. Provides indentation,
+ * a background, and monospaced font stack. NOTE: the font
+ * stack is based on bootstrap.min.css:5. This could change
+ * so if re update the bootstrap... check this.
+ */
+
+.json {
+  background-color: $color-json-bg;
+  border-width: 1px;
+  border-color: $regLtGray;
+  border-style: solid;
+  display: inline-block;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.json div {
+  margin-left: 10px;
+  color: $regBlack;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: inherit;
+}
+
+/*
+ * separate style for data models.
+ */
+.json-model {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.json-model div {
+  margin-left: 10px;
+  font-size: $font-json-size;
+  font-weight: 500;
+}
+.propName {
+  color: $regBlack;
+  font-weight: 700;
+}
+
+.propType {
+  color: $color-json-property;
+  font-weight: 500;
+
+}
+.propOpt {
+  color: $regBlack;
+  font-style: italic;
+}

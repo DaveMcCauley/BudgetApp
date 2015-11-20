@@ -9,9 +9,10 @@
 </head>
 <body>
   <div class="intro container">
-    <h1>API Docus</h1>
-    <h2>This is the API spec</h2>
+    <h2>BudgetApp API Spec v0.0</h2>
+    <h5>This is the API spec template. The routes are not real. Yet.</h5>
   </div>
+  <div class="routes container"><h3>API Routes</h3></div>
   <div id="resources_wrapper" class="container">
   	<!-- begin resource list -->
   	<ul id="resources">
@@ -67,7 +68,7 @@
 										<td>Model</td>
 									</tr>
 								</tbody>
-							</table>	
+							</table>
 							<h1>Responses</h1>
 							<table class="fullwidth">
 								<thead>
@@ -80,19 +81,30 @@
 								</thead>
 								<tbody class="content-params">
 									<tr>
-										<td class="code required"><code>ID</code></td>
-										<td>Identifier of a budget</td>
+										<td><div class="return ok">STATUS 200</div></td>
+										<td>Returned if the budget was found</td>
 										<td>UUID</td>
 										<td>UUID</td>
 									<tr>
 									<tr>
-										<td class="code required">Key</td>
-										<td>Unique key value</td>
+										<td><div class="return err">STATUS 401</div></td>
+										<td>Returned if the calling user is not authenticated.</td>
 										<td>Long</td>
 										<td>Model</td>
 									</tr>
 								</tbody>
-							</table>	
+							</table>
+              <h1>JSON Sample Data</h1>
+              <div class="json">
+                <div>{
+                  <div>"keys":[
+                    <div>{
+                      <div>"self":"http://www.example.com/jira"</div>
+                      <div>"key":"issue support"</div>
+                    }</div>
+                  ]</div>
+                }</div>
+              </div>
   					</div>
   				</li>
   				<li class="put endpoint"><!-- budget/PUT/ -->
@@ -103,8 +115,46 @@
   					</div>
   					<div id="budget_put_content" class="endpoint-content collapse">
   						<h1>Parameters</h1>
-							<h2>Hook, Line, Sinker</h2>
-  					</div>
+							<table class="fullwidth">
+                <thead>
+                  <tr>
+                    <th style="width:100px; max-width:100px;">Parameter</th>
+                    <th style="width:200px; max-width:200px;">Description</th>
+                    <th style="width:100px; max-width:100px;">Parameter Type</th>
+                    <th style="width:300px; max-width:300px;">Data Type</th>
+                  </tr>
+                </thead>
+                <tbody class="content-params">
+                  <tr>
+                    <td><div class="return ok">STATUS 200</div></td>
+                    <td>Returned if the budget was found</td>
+                    <td>UUID</td>
+                    <td>UUID</td>
+                  <tr>
+                  <tr>
+                    <td><div class="return err">STATUS 401</div></td>
+                    <td>Returned if the calling user is not authenticated.</td>
+                    <td>Long</td>
+                    <td>Model</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h1>Data Model</h1>
+              <div class="json-model">
+                <div><span class="propName">Pet {</span>
+                  <div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
+                  <div><span class="propName">category</span>(<span class="propType">Category</span>,<span class="propOpt">optional</span>),</div>
+                  <div><span class="propName">photoUrls</span>(<span class="propType">Array[string]</span>),</div>
+                  <div><span class="propName">status</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),
+                        pet status=['available','pending','sold']</div>
+                  <span class="propName">}</span>
+                </div>
+                <div><span class="propName">Category {</span>
+                  <div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
+                  <div><span class="propName">name</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),</div>
+                <div>
+              </div>
+  					</div><!-- end endpoint content -->
   				</li>
           <li class="get endpoint"><!-- budget/GET/{id} -->
             <div class="endpoint-heading">

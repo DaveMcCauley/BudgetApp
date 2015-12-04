@@ -141,18 +141,19 @@
               </table>
               <h1>Data Model</h1>
               <div class="json-model">
-                <div><span class="propName">Pet {</span>
+                <div><span class="propName">pet {</span>
                   <div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
                   <div><span class="propName">category</span>(<span class="propType">Category</span>,<span class="propOpt">optional</span>),</div>
                   <div><span class="propName">photoUrls</span>(<span class="propType">Array[string]</span>),</div>
                   <div><span class="propName">status</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),
                         pet status=['available','pending','sold']</div>
-                  <span class="propName">}</span>
+									<div><span class="propName">category {</span>
+										<div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
+										<div><span class="propName">name</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),</div>
+										}
+									</div>
+									<span class="propName">}</span>
                 </div>
-                <div><span class="propName">Category {</span>
-                  <div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
-                  <div><span class="propName">name</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),</div>
-                <div>
               </div>
   					</div><!-- end endpoint content -->
   				</li>

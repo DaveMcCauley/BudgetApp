@@ -1,19 +1,19 @@
-/* line 39, APIDoc.scss */
+/* line 39, apidoc.scss */
 html {
   overflow-y: scroll; }
 
-/* line 43, APIDoc.scss */
+/* line 43, apidoc.scss */
 ul,
 li {
   list-style: none;
   padding-left: 0; }
 
-/* line 49, APIDoc.scss */
+/* line 49, apidoc.scss */
 table {
   margin: 0 10px 0;
   font-weight: 500; }
 
-/* line 54, APIDoc.scss */
+/* line 54, apidoc.scss */
 thead {
   border-bottom-style: solid;
   border-color: #d2d2d2;
@@ -21,28 +21,28 @@ thead {
   color: #787878;
   font-size: 11px; }
 
-/* line 62, APIDoc.scss */
+/* line 62, apidoc.scss */
 tbody {
   color: #333333;
   font-size: 14px; }
 
-/* line 67, APIDoc.scss */
+/* line 67, apidoc.scss */
 td {
   padding-top: 0;
   padding-bottom: 4px; }
 
-/* line 72, APIDoc.scss */
+/* line 72, apidoc.scss */
 td:first-child {
   padding-top: 4px; }
 
-/* line 76, APIDoc.scss */
+/* line 76, apidoc.scss */
 li.resource-item:not(:first-child) {
   border-top-color: #d2d2d2;
   border-top-style: solid;
   border-top-width: 1px;
   padding-top: 10px; }
 
-/* line 83, APIDoc.scss */
+/* line 83, apidoc.scss */
 .resource-heading {
   color: #787878;
   font-size: 16px;
@@ -50,23 +50,23 @@ li.resource-item:not(:first-child) {
   overflow: auto;
   margin-bottom: 10px; }
 
-/* line 91, APIDoc.scss */
+/* line 91, apidoc.scss */
 .resource-heading a {
   color: #333333; }
 
-/* line 95, APIDoc.scss */
+/* line 95, apidoc.scss */
 .resource-ctrls a {
   font-size: 14px;
   font-weight: normal; }
 
-/* line 100, APIDoc.scss */
+/* line 100, apidoc.scss */
 .endpoint-heading {
   border-style: solid;
   border-width: 1px;
   border-color: inherit;
   margin-bottom: 10px; }
 
-/* line 107, APIDoc.scss */
+/* line 107, apidoc.scss */
 .operator {
   border-radius: 5px;
   display: inline-block;
@@ -77,31 +77,31 @@ li.resource-item:not(:first-child) {
   width: 50px;
   height: 30px; }
 
-/* line 118, APIDoc.scss */
+/* line 118, apidoc.scss */
 a:link.operator,
 a:visited.operator,
 a:hover.operator,
 a:active.operator {
   text-decoration: none; }
 
-/* line 126, APIDoc.scss */
+/* line 126, apidoc.scss */
 .endpoint-path {
   font-size: 14px;
   padding-top: 5px;
   margin-left: 10px; }
 
-/* line 132, APIDoc.scss */
+/* line 132, apidoc.scss */
 a.endpoint-path {
   color: #333333; }
 
-/* line 136, APIDoc.scss */
+/* line 136, apidoc.scss */
 .endpoint-desc {
   padding-top: 5px;
   margin-right: 10px; }
 
 /* NOTE: .collapse does not like padding on the
    animated div. Don't do it, or will look wonky */
-/* line 143, APIDoc.scss */
+/* line 143, apidoc.scss */
 .endpoint-content {
   border-color: inherit;
   border-style: solid;
@@ -109,12 +109,12 @@ a.endpoint-path {
   margin-bottom: 10px;
   margin-top: -11px; }
 
-/* line 151, APIDoc.scss */
+/* line 151, apidoc.scss */
 .endpoint-content h1 {
   font-size: 14px;
   margin-left: 10px; }
 
-/* line 156, APIDoc.scss */
+/* line 156, apidoc.scss */
 .endpoint-content h2 {
   color: #787878;
   font-size: 13px;
@@ -123,91 +123,91 @@ a.endpoint-path {
 /*
  * styling for the POST operator type
  */
-/* line 166, APIDoc.scss */
+/* line 166, apidoc.scss */
 .post {
   background-color: #e7f6ec;
   border-color: #c3e8d1; }
 
-/* line 171, APIDoc.scss */
+/* line 171, apidoc.scss */
 .post .operator {
   color: #fafafa;
   background-color: #10a54a; }
 
-/* line 176, APIDoc.scss */
+/* line 176, apidoc.scss */
 .post .endpoint-desc {
   color: #10a54a; }
 
-/* line 180, APIDoc.scss */
+/* line 180, apidoc.scss */
 .post .endpoint-content h1 {
   color: #10a54a; }
 
 /*
  * styling for the PUT operator type
  */
-/* line 188, APIDoc.scss */
+/* line 188, apidoc.scss */
 .put {
   background-color: #f9f2e9;
   border-color: #f0e0ca; }
 
-/* line 193, APIDoc.scss */
+/* line 193, apidoc.scss */
 .put .operator {
   color: #fafafa;
   background-color: #c5862b; }
 
-/* line 198, APIDoc.scss */
+/* line 198, apidoc.scss */
 .put .endpoint-desc {
   color: #c5862b; }
 
-/* line 202, APIDoc.scss */
+/* line 202, apidoc.scss */
 .put .endpoint-content h1 {
   color: #c5862b; }
 
 /*
  * styling for the GET operator type
  */
-/* line 210, APIDoc.scss */
+/* line 210, apidoc.scss */
 .get {
   background-color: #e7f0f7;
   border-color: #c3d9ec; }
 
-/* line 215, APIDoc.scss */
+/* line 215, apidoc.scss */
 .get .operator {
   color: #fafafa;
   background-color: #0f6ab4; }
 
-/* line 220, APIDoc.scss */
+/* line 220, apidoc.scss */
 .get .endpoint-desc {
   color: #0f6ab4; }
 
-/* line 224, APIDoc.scss */
+/* line 224, apidoc.scss */
 .get .endpoint-content h1 {
   color: #0f6ab4; }
 
 /*
  * styling for the DELETE operator type
  */
-/* line 232, APIDoc.scss */
+/* line 232, apidoc.scss */
 .delete {
   background-color: #f5e8e8;
   border-color: #e8c6c7; }
 
-/* line 237, APIDoc.scss */
+/* line 237, apidoc.scss */
 .delete .operator {
   color: #fafafa;
   background-color: #a41e22; }
 
-/* line 242, APIDoc.scss */
+/* line 242, apidoc.scss */
 .delete .endpoint-desc {
   color: #a41e22; }
 
-/* line 246, APIDoc.scss */
+/* line 246, apidoc.scss */
 .delete .endpoint-content h1 {
   color: #a41e22; }
 
 /*
  * These are the return lozenges
  */
-/* line 254, APIDoc.scss */
+/* line 254, apidoc.scss */
 .return {
   border-radius: 3px;
   color: #e6e6e6;
@@ -219,11 +219,11 @@ a.endpoint-path {
   width: 75px;
   height: 16px; }
 
-/* line 266, APIDoc.scss */
+/* line 266, apidoc.scss */
 .ok {
   background-color: #14892c; }
 
-/* line 270, APIDoc.scss */
+/* line 270, apidoc.scss */
 .err {
   background-color: #d04437; }
 
@@ -233,7 +233,7 @@ a.endpoint-path {
  * stack is based on bootstrap.min.css:5. This could change
  * so if re update the bootstrap... check this.
  */
-/* line 282, APIDoc.scss */
+/* line 282, apidoc.scss */
 .json {
   background-color: #fafafa;
   border-width: 1px;
@@ -246,7 +246,7 @@ a.endpoint-path {
   margin-bottom: 10px;
   padding: 5px; }
 
-/* line 295, APIDoc.scss */
+/* line 295, apidoc.scss */
 .json div {
   margin-left: 10px;
   color: #333333;
@@ -257,32 +257,32 @@ a.endpoint-path {
 /*
  * separate style for data models.
  */
-/* line 306, APIDoc.scss */
+/* line 306, apidoc.scss */
 .json-model {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 5px; }
 
-/* line 312, APIDoc.scss */
+/* line 312, apidoc.scss */
 .json-model div {
   margin-left: 10px;
   font-size: 13px;
   font-weight: 500; }
 
-/* line 317, APIDoc.scss */
+/* line 317, apidoc.scss */
 .propName {
   color: #333333;
   font-weight: 700; }
 
-/* line 322, APIDoc.scss */
+/* line 322, apidoc.scss */
 .propType {
   color: #5555aa;
   font-weight: 500; }
 
-/* line 327, APIDoc.scss */
+/* line 327, apidoc.scss */
 .propOpt {
   color: #333333;
   font-style: italic; }
 
-/*# sourceMappingURL=APIDoc.css.map */
+/*# sourceMappingURL=apidoc.css.map */

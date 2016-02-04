@@ -221,10 +221,28 @@ a.endpoint-path {
 
 /* line 266, apidoc.scss */
 .ok {
+	border-radius: 3px;
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
+  height: 16px;
   background-color: #14892c; }
 
 /* line 270, apidoc.scss */
 .err {
+	border-radius: 3px;
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
+  height: 16px;
   background-color: #d04437; }
 
 /*
@@ -241,7 +259,7 @@ a.endpoint-path {
   border-style: solid;
   display: inline-block;
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  margin-left: 10px;
+  margin-top: 5px;
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 5px; }

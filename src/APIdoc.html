@@ -44,7 +44,8 @@
               <a href="#budget_post_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">add a budget</a>
   					</div>
   					<div id="budget_post_content" class="endpoint-content collapse">
-  						<h1>Parameters</h1>
+  						
+							<h1>Parameters</h1>
 							
 							<div class="param-item">
 								<div class="param name head">Name</div>
@@ -71,8 +72,9 @@
 							</div>
 						
 							<h1>Responses</h1>
+							
 							<div class="response-item">
-								<div class="response code"><div class= "return ok">STATUS 200</div></div>
+								<div class="response code"><div class= "ok">STATUS 200</div></div>
 								<div class="response note"><i>application/json</i> returned if 
 									the component is created successfully. buet if the sersasone is 
 									really long need to check what happense withe the statsus code
@@ -90,57 +92,18 @@
 								</div>
 									
 							</div>
-							
-							
+											
 							<div class="response-item">
-								<div class= "response code"><div class= "return err">STATUS 401</div></div>
+								<div class= "response code"><div class= "err">STATUS 401</div></div>
 								<div class= "response note">Returned if the caller is not logged 
 									in and does not have permission to create budgets.</div>
 							</div>
-							
+			
 							<div class="response-item">
-								<div class= "response code"><div class="return err">STATUS 403</div></div>
+								<div class= "response code"><div class="err">STATUS 403</div></div>
 								<div class= "response note">Returned if the caller is authenticated
 									and does not have permission to create budgets.</div>
 							</div>
-							
-							
-							<table class="fullwidth">
-								<thead>
-									<tr>
-	 									<th style="width:200px; max-width:200px;">Parameter</th>
-										<th style="width:150px; max-width:200px;"></th>
-										<th style="width:400px; max-width:400px;">Description</th>
-										<th style="width:300px; max-width:300px;">Valid Values</th>
-										<th style="width:300px; max-width:300px;">Default Value</th>
-									</tr>
-								</thead>
-								<tbody class="content-params">
-									<tr>
-										<td><div class="return ok">STATUS 200</div></td>
-										<td>Returned if the budget was found</td>
-										<td>UUID</td>
-										<td>UUID</td>
-									<tr>
-									<tr>
-										<td><div class="return err">STATUS 401</div></td>
-										<td>Returned if the calling user is not authenticated.</td>
-										<td>Long</td>
-										<td>Model</td>
-									</tr>
-								</tbody>
-							</table>
-              <h1>JSON Sample Data</h1>
-              <div class="json">
-                <div>{
-                  <div>"keys":[
-                    <div>{
-                      <div>"self":"http://www.example.com/jira"</div>
-                      <div>"key":"issue support"</div>
-                    }</div>
-                  ]</div>
-                }</div>
-              </div>
   					</div>
   				</li>
   				<li class="put endpoint"><!-- budget/PUT/ -->

@@ -45,38 +45,74 @@
   					</div>
   					<div id="budget_post_content" class="endpoint-content collapse">
   						<h1>Parameters</h1>
-							<table class="fullwidth">
-								<thead>
-									<tr>
-										<th style="width:100px; max-width:100px;">Parameter</th>
-										<th style="width:200px; max-width:200px;">Description</th>
-										<th style="width:100px; max-width:100px;">Parameter Type</th>
-										<th style="width:300px; max-width:300px;">Data Type</th>
-									</tr>
-								</thead>
-								<tbody class="content-params">
-									<tr>
-										<td class="code required"><code>ID</code></td>
-										<td>Identifier of a budget</td>
-										<td>UUID</td>
-										<td>UUID</td>
-									<tr>
-									<tr>
-										<td class="code required">Key</td>
-										<td>Unique key value</td>
-										<td>Long</td>
-										<td>Model</td>
-									</tr>
-								</tbody>
-							</table>
+							
+							<div class="param-item">
+								<div class="param name head">Name</div>
+								<div class="param reqd head">Req'd?</div>
+								<div class="param desc head">Description</div>
+								<div class="param data head">Valid Values</div>
+								<div class="param default head">Default Value</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">name</div>
+								<div class="param reqd">required</div>
+								<div class="param desc">This is a long description of what 
+									the parameter is, does, and what it's there for.</div>
+								<div class="param data">a string with a length from 1 to 16384 </div>
+								<div class= "param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">description</div>
+								<div class="param reqd">required</div>
+								<div class="param desc">This is a long description of what 
+									the parameter is, does, and what it's there for.</div>
+								<div class="param data">a string with a length from 0 to 16384 </div>
+								<div class= "param default">[none]</div>
+							</div>
+						
 							<h1>Responses</h1>
+							<div class="response-item">
+								<div class="response code"><div class= "return ok">STATUS 200</div></div>
+								<div class="response note"><i>application/json</i> returned if 
+									the component is created successfully. buet if the sersasone is 
+									really long need to check what happense withe the statsus code
+									box. and to make sure it doesn't grow.
+									<div class="json">
+										<div>{
+											<div>"keys":[
+												<div>{
+													<div>"self":"http://www.example.com/jira"</div>
+													<div>"key":"issue support"</div>
+												}</div>
+											]</div>
+										}</div>
+									</div>	
+								</div>
+									
+							</div>
+							
+							
+							<div class="response-item">
+								<div class= "response code"><div class= "return err">STATUS 401</div></div>
+								<div class= "response note">Returned if the caller is not logged 
+									in and does not have permission to create budgets.</div>
+							</div>
+							
+							<div class="response-item">
+								<div class= "response code"><div class="return err">STATUS 403</div></div>
+								<div class= "response note">Returned if the caller is authenticated
+									and does not have permission to create budgets.</div>
+							</div>
+							
+							
 							<table class="fullwidth">
 								<thead>
 									<tr>
-										<th style="width:100px; max-width:100px;">Parameter</th>
-										<th style="width:200px; max-width:200px;">Description</th>
-										<th style="width:100px; max-width:100px;">Parameter Type</th>
-										<th style="width:300px; max-width:300px;">Data Type</th>
+	 									<th style="width:200px; max-width:200px;">Parameter</th>
+										<th style="width:150px; max-width:200px;"></th>
+										<th style="width:400px; max-width:400px;">Description</th>
+										<th style="width:300px; max-width:300px;">Valid Values</th>
+										<th style="width:300px; max-width:300px;">Default Value</th>
 									</tr>
 								</thead>
 								<tbody class="content-params">

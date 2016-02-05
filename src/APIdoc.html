@@ -78,8 +78,8 @@
 								<div class="response note"><i>application/json</i> returned if 
 									the component is created successfully. buet if the sersasone is 
 									really long need to check what happense withe the statsus code
-									box. and to make sure it doesn't grow.
-									<div class="json">
+									box. and to make sure it doesn't grow.<br>
+									<div class="json example">
 										<div>{
 											<div>"keys":[
 												<div>{
@@ -106,54 +106,73 @@
 							</div>
   					</div>
   				</li>
-  				<li class="put endpoint"><!-- budget/PUT/ -->
+  				<li class="put endpoint"><!-- budget/PUT/{id} -->
   					<div class="endpoint-heading">
   						<a href="#budget_put_content" data-toggle="collapse" class="expcontent operator">PUT</a>
-              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-path">/budget</a>
-              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">revise a budget in the NDS</a>
+              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-path">/budget/{id}</a>
+              <a href="#budget_put_content" data-toggle="collapse" class="expcontent endpoint-desc pull-right">revise budget items</a>
   					</div>
   					<div id="budget_put_content" class="endpoint-content collapse">
-  						<h1>Parameters</h1>
-							<table class="fullwidth">
-                <thead>
-                  <tr>
-                    <th style="width:100px; max-width:100px;">Parameter</th>
-                    <th style="width:200px; max-width:200px;">Description</th>
-                    <th style="width:100px; max-width:100px;">Parameter Type</th>
-                    <th style="width:300px; max-width:300px;">Data Type</th>
-                  </tr>
-                </thead>
-                <tbody class="content-params">
-                  <tr>
-                    <td><div class="return ok">STATUS 200</div></td>
-                    <td>Returned if the budget was found</td>
-                    <td>UUID</td>
-                    <td>UUID</td>
-                  <tr>
-                  <tr>
-                    <td><div class="return err">STATUS 401</div></td>
-                    <td>Returned if the calling user is not authenticated.</td>
-                    <td>Long</td>
-                    <td>Model</td>
-                  </tr>
-                </tbody>
-              </table>
+  						<h1>Arguments</h1>
+							<div class="param-item">
+								<div class="param name head">Name</div>
+								<div class="param reqd head">Req'd?</div>
+								<div class="param desc head">Description</div>
+								<div class="param data head">Valid Values</div>
+								<div class="param default head">Default Value</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">name</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">updates the budget name</div>
+								<div class="param data">string with length from 1 to 16384</div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">desc</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">updates the budget description</div>
+								<div class="param data">string with length from 0 to 16384</div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">closed</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">sets project status</div>
+								<div class="param data"><ul><li>true</li><li>false</li></ul></div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">idOrganization</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">sets the oranizations id</div>
+								<div class="param data">a string with a length from 0 to 16384</div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">starred</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">sets starred toggle for user</div>
+								<div class="param data"><ul><li>true</li><li>false</li></ul></div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">prefs/permissionLevel</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">sets starred toggle for user</div>
+								<div class="param data"><u>One of:</u><ul><li>org</li><li>private</li><li>public</li></ul></div>
+								<div class="param default">[none]</div>
+							</div>
+							<div class="param-item">
+								<div class="param name">prefs/comments</div>
+								<div class="param reqd">optional</div>
+								<div class="param desc">sets comments permission</div>
+								<div class="param data"><u>One of:</u><ul><li>disabled</li><li>members</li><li>org</li><li>public</li></ul></div>
+								<div class="param default">[none]</div>
+							</div>
               <h1>Data Model</h1>
-              <div class="json-model">
-                <div><span class="propName">pet {</span>
-                  <div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
-                  <div><span class="propName">category</span>(<span class="propType">Category</span>,<span class="propOpt">optional</span>),</div>
-                  <div><span class="propName">photoUrls</span>(<span class="propType">Array[string]</span>),</div>
-                  <div><span class="propName">status</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),
-                        pet status=['available','pending','sold']</div>
-									<div><span class="propName">category {</span>
-										<div><span class="propName">id</span>(<span class="propType">integer</span>,<span class="propOpt">optional</span>),</div>
-										<div><span class="propName">name</span>(<span class="propType">string</span>,<span class="propOpt">optional</span>),</div>
-										}
-									</div>
-									<span class="propName">}</span>
-                </div>
-              </div>
+              
+							
   					</div><!-- end endpoint content -->
   				</li>
           <li class="get endpoint"><!-- budget/GET/{id} -->

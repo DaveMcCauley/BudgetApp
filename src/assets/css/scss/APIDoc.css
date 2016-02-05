@@ -316,8 +316,16 @@ a.endpoint-path {
 .param {
 	display: table-cell;
 	vertical-align: top;
-	padding: 0 20px 5px 0;
+	padding: 5px 20px 5px 0;
 	font-size: 14px;
+	border-bottom-style: solid;
+	border-color: #cccccc;
+	border-width: 1px;
+}
+
+.param ul,
+.param li{
+	list-style: square inside;
 }
 
 .name {
@@ -339,6 +347,7 @@ a.endpoint-path {
 }
 .head {
 	border-color: #d2d2d2;
+	border-color: #b3b3b3;
 	border-width: 0;
 	border-bottom-width: 1px;
 	border-style: solid;
@@ -370,4 +379,23 @@ a.endpoint-path {
 }
 .note {
 	padding-left: 20px;
+}
+
+.json.example {
+	position: relative;
+	margin-top: 25px;
+}
+
+.json.example::before {
+  content: "Example";
+	text-transform: uppercase;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	position: absolute;
+	top:-20px;
+	left: -0px;
+	color: #333;
+	
+	
 }

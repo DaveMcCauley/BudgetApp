@@ -18,7 +18,8 @@ Budget data model...
 		"requests": "disabled",
 		"invitations": "members",
 		"avatar": "#0070BF",
-		"canInvite": true
+		"canInvite": true,
+		"comments": "members"
 	},
 	"memberships": [
 		{

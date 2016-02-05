@@ -221,10 +221,28 @@ a.endpoint-path {
 
 /* line 266, apidoc.scss */
 .ok {
+	border-radius: 3px;
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
+  height: 16px;
   background-color: #14892c; }
 
 /* line 270, apidoc.scss */
 .err {
+	border-radius: 3px;
+  color: #e6e6e6;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
+  height: 16px;
   background-color: #d04437; }
 
 /*
@@ -241,7 +259,7 @@ a.endpoint-path {
   border-style: solid;
   display: inline-block;
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  margin-left: 10px;
+  margin-top: 5px;
   margin-right: 10px;
   margin-bottom: 10px;
   padding: 5px; }
@@ -286,3 +304,98 @@ a.endpoint-path {
   font-style: italic; }
 
 /*# sourceMappingURL=apidoc.css.map */
+
+.param-item{
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	padding: 0 10px 0;
+	/* max-width: 900px;*/
+	
+}
+.param {
+	display: table-cell;
+	vertical-align: top;
+	padding: 5px 20px 5px 0;
+	font-size: 14px;
+	border-bottom-style: solid;
+	border-color: #cccccc;
+	border-width: 1px;
+}
+
+.param ul,
+.param li{
+	list-style: square inside;
+}
+
+.name {
+	width: 15%;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+.reqd {
+	width: 15%;
+}
+.desc {
+	width: 35%;
+}
+.data {
+	width: 20%
+}
+.default {
+	width: 15%
+}
+.head {
+	border-color: #d2d2d2;
+	border-color: #b3b3b3;
+	border-width: 0;
+	border-bottom-width: 1px;
+	border-style: solid;
+	color: #787878;
+	font-size: 11px;
+	font-weight: 700;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	padding: 0;
+}
+.response-item {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	padding: 0 10px 0;
+	max-width: 600px;
+}
+.response {
+		display: table-cell;
+		vertical-align: top;
+		padding: 0 20px 5px 0;
+		font-size: 14px;
+}
+.code {
+	font-size: 11px;
+  font-weight: 700;
+  padding-top: 4px;
+  width: 75px;
+	vertical-align: top;
+}
+.note {
+	padding-left: 20px;
+}
+
+.json.example {
+	position: relative;
+	margin-top: 25px;
+}
+
+.json.example::before {
+  content: "Example";
+	text-transform: uppercase;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	position: absolute;
+	top:-20px;
+	left: -0px;
+	color: #333;
+	
+	
+}

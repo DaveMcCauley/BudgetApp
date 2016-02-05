@@ -326,6 +326,7 @@ module.exports = function(grunt) {
   // https://24ways.org/2013/grunt-is-not-weird-and-hard/
 
   // create the tasks
+  grunt.registerTask('buildapi',['sass','watch'])
   grunt.registerTask('default',['jshint','uglify','less','cssmin']);
   grunt.registerTask('uglyonly',['uglify']);
   grunt.registerTask('production',['jshint','uglify','less','cssmin:production']);

@@ -36,6 +36,9 @@ $color-json-bg:       rgb(250,250,250);
 $color-json-property: rgb(85,85,170);
 $font-json-size:      13px;
 
+$normal-font-stack: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$code-font-stack: Menlo,Monaco,Consolas,"Courier New",monospace;
+
 html {
   overflow-y: scroll;
 }
@@ -46,11 +49,13 @@ li {
   padding-left: 0;
 }
 
+// TODO REMOVE
 table {
   margin: 0 10px 0;
   font-weight: 500;
 }
 
+// TODO: DELETE THIS NO LONGER ISING TABLES>
 thead {
   border-bottom-style: solid;
   border-color: $regLtGray;
@@ -59,20 +64,24 @@ thead {
   font-size: $opTextSize;
 }
 
+// TODO REMOVE
 tbody {
   color: $regBlack;
   font-size: $baseTextSize;
 }
 
+// TODO REMOVE
 td {
   padding-top: 0;
   padding-bottom:4px;
 }
 
+// TODO REMOVE
 td:first-child {
   padding-top: 4px;
 }
 
+// TODO REMOVE
 li.resource-item:not(:first-child) {
   border-top-color: $regLtGray;
   border-top-style: solid;
@@ -251,6 +260,7 @@ a.endpoint-path {
  * These are the return lozenges
  */
 
+// TODO REMOVE.
 .return {
   border-radius: 3px;
   color: $regWhite;
@@ -265,10 +275,28 @@ a.endpoint-path {
 
 .ok {
   background-color: rgb(20,137,44);
+  border-radius: 3px;
+  color: $regWhite;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  height: 16px;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
 }
 
 .err {
   background-color: rgb(208,68,55);
+  border-radius: 3px;
+  color: $regWhite;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  height: 16px;
+  padding-top: 0;
+  text-align: center;
+  width: 75px;
 }
 
 
@@ -285,7 +313,7 @@ a.endpoint-path {
   border-color: $regLtGray;
   border-style: solid;
   display: inline-block;
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: $code-font-stack;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -314,6 +342,25 @@ a.endpoint-path {
   font-size: $font-json-size;
   font-weight: 500;
 }
+
+.json.example {
+  position: relative;
+  margin-top: 25px;
+  margin-left: 0;
+}
+
+.json.example::before {
+  color: $regBlack;
+  content: "Example";
+  font-family: $normal-font-stack;
+  font-size: $smallTextSize;
+  font-weight: 700;
+  left: -0px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -20px;
+}
+
 .propName {
   color: $regBlack;
   font-weight: 700;
@@ -328,3 +375,94 @@ a.endpoint-path {
   color: $regBlack;
   font-style: italic;
 }
+
+/*
+ * styling for the parameter/argument lists
+ */
+
+.param-item {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 0 10px 0;
+}
+
+.param {
+  display: table-cell;
+  vertical-align: top;
+  padding: 5px 20px 5px 0;
+  font-size: $baseTextSize;
+  border-bottom-style: solid;
+  border-color: #cccccc;
+  border-width: 1px;
+}
+
+.param ul
+.param li {
+  list-style: square inside;
+}
+
+.name {
+  width: 15%;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.reqd {
+  width: 15%;
+}
+
+.desc {
+  width: 35%;
+}
+
+.data {
+  width: 20%;
+}
+
+.default {
+  width: 15%;
+}
+
+.head {
+  border-color: #b3b3b3; // TODO REMOVE OR CONFIRM
+  border-color: $regGray;
+  // border-width: 0;  // REMOVE IF I DON'T NEED
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  color: $regGray;
+  font-family: $normal-font-stack;
+  font-size: $opTextSize;
+  font-weight: 700;
+  padding: 0;
+}
+
+/*
+ * Response codes and descriptions
+ */
+
+.response-item {
+  display: table;
+  max-width: 600px;
+  padding: 0 10px 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.response {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 20px 5px 0;
+  font-size: 14px;
+}
+
+.code {
+  font-size: $opTextSize;
+  font-weight: 700;
+  padding-top: 4px;
+  width: 75px;
+  vertical-align: top;
+}
+.note {
+  padding-left: 20px;
+}
+
